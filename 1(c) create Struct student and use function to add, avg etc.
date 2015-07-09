@@ -1,0 +1,40 @@
+#include<stdio.h>
+struct stud
+{
+        int roll;
+        char name[20];
+        float mark1,mark2,mark3,total,avg,cgpa;
+        
+};
+void add (struct stud r)
+{
+        printf ("The Total marks of the student is: %f\n",r.total);
+}
+void avg (struct stud r)
+{
+        printf("The Average is: %f\n", ((r.total)/3));
+}
+void cgpa (struct stud r)
+{
+        printf("The CGPA is: %f\n", ((r.total)/30));
+}
+void disp(struct stud r)
+{
+        printf ("Roll No. : %d\nName : %s\nMark1: %f\nMark2: %f\nMark3: %f\n", r.roll, r.name, r.mark1, r.mark2, r.mark3);
+}
+int main()
+{
+        struct stud r;
+        printf("Enter the roll no.: ");
+        scanf ("%d", &r.roll);
+        printf("Enter your name: ");
+        scanf ("%s", r.name);
+        printf ("Enter your marks of 3 subjects: \n");
+        scanf("%f%f%f", &r.mark1, &r.mark2, &r.mark3);
+        r.total=r.mark1+r.mark2+r.mark3;
+        disp(r);
+        add (r);
+        avg (r);
+        cgpa(r);
+        return 0;
+}
