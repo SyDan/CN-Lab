@@ -1,23 +1,15 @@
 #include <stdio.h>
 int main()
 {
-   int n;
-   FILE *fptr;
-   fptr=fopen("program.txt","w");
-   if(fptr==NULL){
-      printf("Error!");   
-      //exit (1);             
+   int data[5], i, *j;
+   printf("Enter 5 elements: ");
+   for(i=0;i<5;++i)
+     scanf("%d",&data[i]);
+   printf("You entered: ");
+   j=data;
+   for(i=0;i<5;i++)
+   {
+     printf("%d\n",*(j + i));
    }
-   printf("Enter n: ");
-   scanf("%d",&n);
-   fprintf(fptr,"%d",n);   
-   fclose(fptr);
-   if ((fptr=fopen("program.txt","r"))==NULL){
-       printf("Error! opening file");
-       //exit(1);        
-   }
-   fscanf(fptr,"%d",&n);
-   printf("Value of n=%d",n); 
-   fclose(fptr);   
    return 0;
 }
