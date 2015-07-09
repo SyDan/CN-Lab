@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+   int data[5], i, *j, sum=0, *p;
+   p=&sum;
+   
+   printf("Enter 5 elements: ");
+   for(i=0;i<5;++i)
+     scanf("%d",&data[i]);
+   printf("You entered: ");
+   j=data;
+   for(i=0;i<5;i++)
+   {
+     printf("%d\n",*(j + i));
+     *p=(*p+*(j + i));
+   }
+   printf ("The sum of array is: %d\n", *p);
+   return 0;
+}
