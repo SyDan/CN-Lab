@@ -1,0 +1,33 @@
+#include<stdio.h>
+struct stud
+{
+        int roll;
+        char name[20];
+        float mark1,mark2,temp;
+        
+};
+
+void disp(struct stud r)
+{
+        printf ("Roll No. : %d\nName : %s\nMark1: %f\nMark2: %f\n", r.roll, r.name, r.mark1, r.mark2);
+}
+void disp1(struct stud* r)
+{
+        printf ("Roll No. : %d\nName : %s\nMark1: %f\nMark2: %f\n", r->roll, r->name, r->mark1, r->mark2);
+}
+int main()
+{
+        struct stud r, *r1;
+        printf("Enter the roll no.: ");
+        scanf ("%d", &r.roll);
+        printf("Enter your name: ");
+        scanf ("%s", r.name);
+        printf ("Enter your marks of 2 subjects: \n");
+        scanf("%f%f", &r.mark1, &r.mark2);
+        r.temp=r.mark1;
+        r.mark1=r.mark2;
+        r.mark2=r.temp;
+        disp(r);
+        disp1(&r);
+        return 0;
+}
